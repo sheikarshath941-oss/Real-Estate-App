@@ -1,0 +1,24 @@
+{
+  "name": "real-estate-app",
+  "version": "1.0.0",
+  "description": "Full-stack Real Estate Website - MERN Stack",
+  "main": "server/server.js",
+  "scripts": {
+    "build": "npm run install-all && npm run build-client",
+    "install-all": "npm install --prefix server && npm install --prefix client",
+    "build-client": "npm run build --prefix client",
+    "start": "node server/server.js",
+    "dev": "concurrently \"npm run dev --prefix server\" \"npm start --prefix client\"",
+    "heroku-postbuild": "npm run install-all && npm run build-client"
+  },
+  "keywords": ["real-estate", "mern", "property"],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
